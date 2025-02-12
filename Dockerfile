@@ -10,7 +10,6 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 # Expose API port
 EXPOSE 11434
 
-# Start Ollama correctly
-CMD ["ollama", "serve", "--host", "0.0.0.0"]
+RUN ollama serve 
 
 RUN ollama pull deepseek-r1:1.5b

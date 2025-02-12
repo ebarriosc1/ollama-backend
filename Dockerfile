@@ -13,7 +13,5 @@ ENV OLLAMA_HOST=0.0.0.0:11434
 # Expose the Ollama API port
 EXPOSE 11434
 
-# Start Ollama API on container startup
-CMD ["ollama","serve"]
-
-RUN ollama pull deepseek-r1:1.5b
+# Start Ollama and pull model after it's running
+CMD ollama serve & sleep 5 && ollama pull deepseek-r1:1.5b && fg

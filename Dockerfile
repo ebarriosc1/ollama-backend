@@ -14,4 +14,4 @@ ENV OLLAMA_HOST=0.0.0.0:11434
 EXPOSE 11434
 
 # Start Ollama and pull model after it's running
-CMD ollama serve & sleep 5 && ollama pull deepseek-r1:1.5b && fg
+CMD ollama serve & sleep 5 && ollama pull deepseek-r1:1.5b 

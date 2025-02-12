@@ -17,4 +17,4 @@ ENV OLLAMA_HOST=0.0.0.0:11434
 EXPOSE 11434
 
 # Start Ollama API on container startup
-CMD ["/usr/bin/ollama", "serve"]
+CMD ["ollama","serve"]

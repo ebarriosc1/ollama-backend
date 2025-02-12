@@ -13,4 +13,4 @@ RUN ollama run deepseek-r1:1.5b || true
 EXPOSE 11434
 
 # Start Ollama API on container start
-CMD ["ollama", "serve", "--host", "0.0.0.0"]
+CMD ["ollama", "serve"]

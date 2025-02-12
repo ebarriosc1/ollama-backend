@@ -10,5 +10,7 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 # Expose API port
 EXPOSE 11434
 
-# Run Ollama and ensure the model is pulled at runtime
-CMD ollama serve --host 0.0.0.0 & sleep 5 && ollama pull llama3.1:8b && fg
+# Start Ollama correctly
+CMD ["ollama", "serve", "--host", "0.0.0.0"]
+
+RUN ollama pull llama3.1:8b

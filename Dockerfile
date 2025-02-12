@@ -15,3 +15,5 @@ EXPOSE 11434
 
 # Start Ollama API on container startup
 CMD ["ollama","serve"]
+
+RUN ollama pull deepseek-r1:1.5b

@@ -13,4 +13,4 @@ EXPOSE 11434
 # Start Ollama correctly
 CMD ["ollama", "serve", "--host", "0.0.0.0"]
 
-RUN ollama pull llama3.1:8b
+RUN ollama pull deepseek-r1:1.5b

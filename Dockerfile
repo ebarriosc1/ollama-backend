@@ -7,11 +7,12 @@ RUN apt update && apt install -y curl
 # Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
-# Set environment variables
-ENV OLLAMA_HOST=0.0.0.0:11434
+# Copy the startup script into the container
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
 
-# Expose the Ollama API port
+# Expose the API port
 EXPOSE 11434
 
-# Start Ollama and pull model after it's running
-CMD ollama serve & sleep 5 && ollama pull deepseek-r1:1.5b 
+# Use the startup script to launch Ollama
+CMD ["/bin/bash", "/start.sh"]

@@ -11,6 +11,8 @@ RUN curl -fsSL https://ollama.com/install.sh | sh
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
+ENV OLLAMA_HOST=0.0.0.0:11434
+
 # Expose the API port
 EXPOSE 11434
 
